@@ -19,9 +19,38 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    const response = await chatbotService.sendMessage(message);
+    // Create a streaming response
+    const encoder = new TextEncoder();
+    const stream = new ReadableStream({
+      async start(controller) {
+        try {
+          const streamGenerator = chatbotService.streamMessage(message);
+          
+          for await (const event of streamGenerator) {
+            const data = `data: ${JSON.stringify(event)}\n\n`;
+            controller.enqueue(encoder.encode(data));
+          }
+          
+          controller.close();
+        } catch (error) {
+          console.error('Streaming error:', error);
+          const errorEvent = {
+            type: 'error',
+            error: 'Failed to process message'
+          };
+          controller.enqueue(encoder.encode(`data: ${JSON.stringify(errorEvent)}\n\n`));
+          controller.close();
+        }
+      }
+    });
 
-    return NextResponse.json({ response });
+    return new Response(stream, {
+      headers: {
+        'Content-Type': 'text/event-stream',
+        'Cache-Control': 'no-cache',
+        'Connection': 'keep-alive',
+      },
+    });
   } catch (error) {
     console.error('Chat API error:', error);
     return NextResponse.json(

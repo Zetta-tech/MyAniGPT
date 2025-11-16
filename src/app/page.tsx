@@ -1,93 +1,93 @@
 'use client';
 
-import { useState } from 'react';
-import { useRouter } from 'next/navigation';
+import Link from 'next/link';
 
-export default function LoginPage() {
-  const [loginId, setLoginId] = useState('');
-  const [password, setPassword] = useState('');
-  const [error, setError] = useState('');
-  const [loading, setLoading] = useState(false);
-  const router = useRouter();
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setError('');
-    setLoading(true);
-
-    try {
-      const response = await fetch('/api/auth/login', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ loginId, password }),
-      });
-
-      const data = await response.json();
-
-      if (response.ok) {
-        router.push('/chat');
-      } else {
-        setError(data.error || 'Authentication failed');
-      }
-    } catch (err) {
-      setError('An error occurred. Please try again.');
-    } finally {
-      setLoading(false);
-    }
-  };
-
+export default function HomePage() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 dark:bg-zinc-900">
-      <div className="w-full max-w-md p-8 bg-white dark:bg-zinc-800 rounded-lg shadow-lg">
-        <h1 className="text-2xl font-bold text-center mb-6 text-zinc-900 dark:text-zinc-50">
-          Login
-        </h1>
-        
-        <form onSubmit={handleSubmit} className="space-y-4">
-          <div>
-            <label htmlFor="loginId" className="block text-sm font-medium text-zinc-700 dark:text-zinc-300 mb-1">
-              Login ID
-            </label>
-            <input
-              id="loginId"
-              type="text"
-              value={loginId}
-              onChange={(e) => setLoginId(e.target.value)}
-              required
-              className="w-full px-4 py-2 border border-zinc-300 dark:border-zinc-600 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-zinc-700 dark:text-zinc-50"
-              placeholder="Enter your login ID"
-            />
+    <div className="flex min-h-screen items-center justify-center bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 dark:from-zinc-950 dark:via-slate-900 dark:to-zinc-900">
+      <div className="w-full max-w-4xl p-8">
+        {/* Header */}
+        <div className="text-center mb-12">
+          <div className="inline-block p-6 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-3xl shadow-2xl mb-6">
+            <span className="text-6xl">🎌</span>
           </div>
+          <h1 className="text-5xl font-bold mb-4 bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
+            Anime Recommendation AI
+          </h1>
+          <p className="text-xl text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
+            Get personalized anime recommendations powered by AI, MyAnimeList data, and your watch history
+          </p>
+        </div>
 
-          <div>
-            <label htmlFor="password" className="block text-sm font-medium text-zinc-700 dark:text-zinc-300 mb-1">
-              Password
-            </label>
-            <input
-              id="password"
-              type="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              required
-              className="w-full px-4 py-2 border border-zinc-300 dark:border-zinc-600 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-zinc-700 dark:text-zinc-50"
-              placeholder="Enter your password"
-            />
+        {/* Feature Cards */}
+        <div className="grid md:grid-cols-3 gap-6 mb-12">
+          <div className="bg-white dark:bg-zinc-800 p-6 rounded-2xl shadow-lg border border-slate-200 dark:border-zinc-700">
+            <div className="text-3xl mb-3">🤖</div>
+            <h3 className="text-lg font-semibold mb-2 text-slate-900 dark:text-slate-50">AI-Powered</h3>
+            <p className="text-sm text-slate-600 dark:text-slate-400">
+              Smart recommendations based on your preferences and watch history
+            </p>
           </div>
+          
+          <div className="bg-white dark:bg-zinc-800 p-6 rounded-2xl shadow-lg border border-slate-200 dark:border-zinc-700">
+            <div className="text-3xl mb-3">📊</div>
+            <h3 className="text-lg font-semibold mb-2 text-slate-900 dark:text-slate-50">MAL Integration</h3>
+            <p className="text-sm text-slate-600 dark:text-slate-400">
+              Access your MyAnimeList data and the entire anime database
+            </p>
+          </div>
+          
+          <div className="bg-white dark:bg-zinc-800 p-6 rounded-2xl shadow-lg border border-slate-200 dark:border-zinc-700">
+            <div className="text-3xl mb-3">🌐</div>
+            <h3 className="text-lg font-semibold mb-2 text-slate-900 dark:text-slate-50">Streaming Info</h3>
+            <p className="text-sm text-slate-600 dark:text-slate-400">
+              Find where to watch on Crunchyroll and other platforms
+            </p>
+          </div>
+        </div>
 
-          {error && (
-            <div className="p-3 bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-md">
-              <p className="text-sm text-red-600 dark:text-red-400">{error}</p>
-            </div>
-          )}
-
-          <button
-            type="submit"
-            disabled={loading}
-            className="w-full py-2 px-4 bg-blue-600 hover:bg-blue-700 disabled:bg-blue-400 text-white font-medium rounded-md transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+        {/* Action Buttons */}
+        <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
+          <Link
+            href="/chat"
+            className="px-8 py-4 bg-gradient-to-r from-blue-500 to-indigo-600 text-white rounded-xl hover:from-blue-600 hover:to-indigo-700 transition-all duration-200 font-semibold shadow-lg hover:shadow-xl text-center text-lg"
           >
-            {loading ? 'Logging in...' : 'Login'}
-          </button>
-        </form>
+            🚀 Start Chatting
+          </Link>
+          
+          <Link
+            href="/test-mal"
+            className="px-8 py-4 bg-white dark:bg-zinc-800 text-slate-700 dark:text-slate-300 rounded-xl hover:bg-slate-50 dark:hover:bg-zinc-700 transition-all duration-200 font-semibold shadow-lg border border-slate-200 dark:border-zinc-700 text-center text-lg"
+          >
+            🔧 Test MAL Setup
+          </Link>
+        </div>
+
+        {/* Quick Info */}
+        <div className="bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-2xl p-6">
+          <h3 className="text-lg font-semibold mb-3 text-blue-900 dark:text-blue-100">
+            ✨ Features
+          </h3>
+          <ul className="space-y-2 text-sm text-blue-800 dark:text-blue-200">
+            <li>✅ View your MyAnimeList watch history</li>
+            <li>✅ Get personalized recommendations based on your taste</li>
+            <li>✅ Search anime database with detailed information</li>
+            <li>✅ Discover top-rated and seasonal anime</li>
+            <li>✅ Check streaming availability on Crunchyroll</li>
+            <li>✅ Session memory - AI remembers your conversation</li>
+          </ul>
+        </div>
+
+        {/* Setup Notice */}
+        <div className="mt-8 text-center">
+          <p className="text-sm text-slate-500 dark:text-slate-400">
+            First time? Check out the{' '}
+            <a href="https://github.com/yourusername/yourrepo#quick-start" className="text-blue-600 dark:text-blue-400 hover:underline font-semibold">
+              Quick Start Guide
+            </a>
+            {' '}to set up your API keys
+          </p>
+        </div>
       </div>
     </div>
   );

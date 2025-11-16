@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@openai/agents": "^0.3.2",
+    "@tavily/core": "^0.5.13",
     "next": "16.0.3",
     "react": "19.2.0",
     "react-dom": "19.2.0",
