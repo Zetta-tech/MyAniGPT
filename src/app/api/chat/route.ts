@@ -3,8 +3,15 @@ import { chatbotService } from '@/app/services/chatbotService';
 
 export async function POST(request: NextRequest) {
   try {
-    const { message } = await request.json();
+    const { message, action } = await request.json();
 
+    // Handle reset action
+    if (action === 'reset') {
+      await chatbotService.resetChat();
+      return NextResponse.json({ success: true, message: 'Chat reset successfully' });
+    }
+
+    // Handle regular message
     if (!message || typeof message !== 'string') {
       return NextResponse.json(
         { error: 'Message is required' },

@@ -21,6 +21,38 @@ export default function ChatPage() {
     scrollToBottom();
   }, [messages]);
 
+  useEffect(() => {
+    // Reset chat when page loads/reloads
+    const resetOnLoad = async () => {
+      try {
+        await fetch('/api/chat', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ action: 'reset' }),
+        });
+      } catch (error) {
+        console.error('Error resetting chat on load:', error);
+      }
+    };
+    resetOnLoad();
+  }, []);
+
+  const handleResetChat = async () => {
+    try {
+      const response = await fetch('/api/chat', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ action: 'reset' }),
+      });
+
+      if (response.ok) {
+        setMessages([]);
+      }
+    } catch (error) {
+      console.error('Error resetting chat:', error);
+    }
+  };
+
   const sendMessage = async (e: React.FormEvent) => {
     e.preventDefault();
     
@@ -59,9 +91,17 @@ export default function ChatPage() {
   return (
     <div className="flex min-h-screen flex-col bg-zinc-50 dark:bg-zinc-900">
       <div className="flex-1 w-full max-w-4xl mx-auto p-4 flex flex-col">
-        <h1 className="text-3xl font-bold text-zinc-900 dark:text-zinc-50 mb-6">
-          Anime Chat Assistant
-        </h1>
+        <div className="flex justify-between items-center mb-6">
+          <h1 className="text-3xl font-bold text-zinc-900 dark:text-zinc-50">
+            Anime Chat Assistant
+          </h1>
+          <button
+            onClick={handleResetChat}
+            className="px-4 py-2 bg-red-500 text-white rounded-lg hover:bg-red-600 transition-colors"
+          >
+            Reset Chat
+          </button>
+        </div>
 
         <div className="flex-1 bg-white dark:bg-zinc-800 rounded-lg shadow-lg p-6 mb-4 overflow-y-auto">
           {messages.length === 0 ? (

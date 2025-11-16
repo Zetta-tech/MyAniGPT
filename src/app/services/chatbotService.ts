@@ -10,6 +10,14 @@ class ChatbotService {
   async sendMessage(message: string): Promise<string> {
     return await this.animeAgent.chat(message);
   }
+
+  async resetChat(): Promise<void> {
+    await this.animeAgent.resetSession();
+  }
+
+  async getSessionId(): Promise<string> {
+    return await this.animeAgent.getSessionId();
+  }
 }
 
 // Export a singleton instance
