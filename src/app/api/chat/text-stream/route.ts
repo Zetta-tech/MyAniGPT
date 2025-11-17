@@ -29,8 +29,27 @@ export async function POST(request: NextRequest) {
     // Get the text stream using toTextStream() helper
     const textStream = await chatbotService.streamTextOnly(message);
 
+    // Convert string stream to Uint8Array stream for Response body
+    const encoder = new TextEncoder();
+    const reader = (textStream as any).getReader() as ReadableStreamDefaultReader<string>;
+    
+    const byteStream = new ReadableStream({
+      async start(controller) {
+        try {
+          while (true) {
+            const { done, value } = await reader.read();
+            if (done) break;
+            controller.enqueue(encoder.encode(value));
+          }
+          controller.close();
+        } catch (error) {
+          controller.error(error);
+        }
+      },
+    });
+
     // Return the stream directly
-    return new Response(textStream, {
+    return new Response(byteStream, {
       headers: {
         'Content-Type': 'text/plain; charset=utf-8',
         'Cache-Control': 'no-cache',

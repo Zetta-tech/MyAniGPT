@@ -58,23 +58,30 @@ const getUserAnimeList = tool({
 
 const searchAnime = tool({
     name: 'search_anime',
-    description: 'Search for anime on MyAnimeList database by title. Use this to find anime details, ratings, and information. Returns up to 100 results with pagination support.',
+    description: 'Search for anime on MyAnimeList database by title. Use this to find anime details, ratings, and information. Returns up to 10 results with pagination support.',
     parameters: z.object({
         query: z.string().describe('The anime title or search query'),
         limit: z.number().min(1).max(100).default(10)
-            .describe('Number of results to return (max 100)'),
+            .describe('Number of results to return (max 20)'),
         offset: z.number().min(0).default(0)
             .describe('Offset for pagination'),
     }),
     execute: async ({ query, limit = 10, offset = 0 }) => {
+        console.log('[search_anime] Tool called with:', { query, limit, offset });
         try {
             if (!malService.isConfigured()) {
+                console.log('[search_anime] MAL not configured');
                 return 'MyAnimeList API is not configured.';
             }
+            console.log('[search_anime] Calling MAL API...');
             const results = await malService.searchAnime(query, limit, offset);
+            console.log('[search_anime] Results received:', results.length, 'anime');
+            
             if (results.length === 0) {
+                console.log('[search_anime] No results found');
                 return `No anime found for "${query}" on MyAnimeList.`;
             }
+            
             const formatted = results.map((anime, index) => {
                 return `${offset + index + 1}. ${anime.title}
    Type: ${anime.media_type || 'TV'} | Episodes: ${anime.num_episodes || 'Unknown'}
@@ -83,8 +90,13 @@ const searchAnime = tool({
    Genres: ${anime.genres?.map(g => g.name).join(', ') || 'N/A'}
    Synopsis: ${anime.synopsis?.substring(0, 150) || 'No synopsis available'}...`;
             }).join('\n\n');
-            return `Search results for "${query}" on MyAnimeList (showing ${results.length} results, offset ${offset}):\n\n${formatted}`;
+            
+            const output = `Search results for "${query}" on MyAnimeList (showing ${results.length} results, offset ${offset}):\n\n${formatted}`;
+            console.log('[search_anime] Returning output, length:', output.length);
+            console.log('[search_anime] Output preview:', output.substring(0, 200));
+            return output;
         } catch (error: any) {
+            console.error('[search_anime] Error:', error);
             return `Error searching anime on MAL: ${error.message}`;
         }
     },

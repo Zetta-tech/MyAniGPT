@@ -47,14 +47,46 @@ export class AnimeAgent {
             let accumulatedText = '';
 
             console.log('[streamChat] Stream started, listening for events...');
+            
+            // Track which tools we've already notified the frontend about
+            const notifiedTools = new Set<string>();
+            
             for await (const event of result) {
-                // Log new items to see which tools were called
+                // Check for new tool calls in newItems and emit events for them
                 if (result.newItems && result.newItems.length > 0) {
                     const toolItems = result.newItems.filter((item: any) => item.type === 'tool_call_item');
-                    if (toolItems.length > 0) {
-                        console.log('[streamChat] 🔧 Tool called:', toolItems.map((item: any) => 
-                            item.rawItem?.name || item.rawItem?.function?.name || 'unknown'
-                        ));
+                    for (const toolItem of toolItems) {
+                        const toolName = toolItem.rawItem?.name || toolItem.rawItem?.function?.name || 'unknown_tool';
+                        const toolId = toolItem.rawItem?.id || `${toolName}_${Date.now()}`;
+                        
+                        // Only emit if we haven't notified about this tool yet
+                        if (!notifiedTools.has(toolId)) {
+                            notifiedTools.add(toolId);
+                            console.log('[streamChat] 🔧 Tool called:', toolName);
+                            
+                            // Emit tool_call_start event to frontend
+                            yield {
+                                type: 'tool_call_start',
+                                toolName: toolName,
+                                toolArgs: toolItem.rawItem?.arguments ? JSON.parse(toolItem.rawItem.arguments) : {},
+                                timestamp: Date.now()
+                            };
+                        }
+                    }
+                    
+                    // Check for completed tool calls
+                    const toolOutputItems = result.newItems.filter((item: any) => item.type === 'tool_call_output_item');
+                    for (const outputItem of toolOutputItems) {
+                        const toolName = outputItem.tool_call_name || outputItem.rawItem?.tool_call_name || 'unknown_tool';
+                        console.log('[streamChat] ✅ Tool completed:', toolName);
+                        
+                        // Emit tool_call_end event to frontend
+                        yield {
+                            type: 'tool_call_end',
+                            toolName: toolName,
+                            toolResult: outputItem.output || outputItem.rawItem?.output || 'No output',
+                            timestamp: Date.now()
+                        };
                     }
                 }
                 
@@ -116,6 +148,8 @@ export class AnimeAgent {
                     if (item.type === 'tool_call_output_item' && eventName === 'tool_call_output_added') {
                         const toolName = item.tool_call_name || 'unknown_tool';
                         console.log('[streamChat] Tool completed:', toolName);
+                        console.log('[streamChat] Tool output:', item.output);
+                        console.log('[streamChat] Tool output length:', item.output?.length || 0);
 
                         yield {
                             type: 'tool_call_end',
