@@ -25,6 +25,10 @@ class ChatbotService {
     yield* this.animeAgent.streamChat(message);
   }
 
+  async streamTextOnly(message: string) {
+    return await this.animeAgent.streamTextOnly(message);
+  }
+
   async resetChat(): Promise<void> {
     await this.animeAgent.resetSession();
   }

@@ -67,7 +67,7 @@ export default function ChatPage() {
 
   const sendMessage = async (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     if (!input.trim() || isLoading) return;
 
     const userMessage = input.trim();
@@ -110,6 +110,7 @@ export default function ChatPage() {
           for (const line of lines) {
             try {
               const event = JSON.parse(line);
+              console.log('[Frontend] Event received:', event.type, event);
 
               switch (event.type) {
                 case 'text_delta':
@@ -137,7 +138,6 @@ export default function ChatPage() {
                   break;
 
                 case 'tool_call_end':
-                  const key = event.toolName + event.timestamp;
                   const existingCall = Array.from(toolCallsMap.values()).find(
                     tc => tc.name === event.toolName && tc.status === 'running'
                   );
@@ -255,11 +255,10 @@ export default function ChatPage() {
                   <div className={`max-w-[85%] ${message.role === 'user' ? 'order-2' : 'order-1'}`}>
                     {/* Message Bubble */}
                     <div
-                      className={`rounded-2xl p-4 shadow-md ${
-                        message.role === 'user'
+                      className={`rounded-2xl p-4 shadow-md ${message.role === 'user'
                           ? 'bg-gradient-to-br from-blue-500 to-indigo-600 text-white'
                           : 'bg-white dark:bg-zinc-800 text-slate-900 dark:text-slate-50 border border-slate-200 dark:border-zinc-700'
-                      }`}
+                        }`}
                     >
                       <p className="whitespace-pre-wrap leading-relaxed">
                         {message.content}
@@ -284,11 +283,10 @@ export default function ChatPage() {
                               <span className="font-semibold text-slate-700 dark:text-slate-300">
                                 {tool.name}
                               </span>
-                              <span className={`ml-auto text-xs px-2 py-1 rounded-full ${
-                                tool.status === 'completed'
+                              <span className={`ml-auto text-xs px-2 py-1 rounded-full ${tool.status === 'completed'
                                   ? 'bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400'
                                   : 'bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-400'
-                              }`}>
+                                }`}>
                                 {tool.status}
                               </span>
                             </div>
@@ -307,7 +305,7 @@ export default function ChatPage() {
                                   <div>
                                     <strong>Result:</strong>
                                     <pre className="mt-1 overflow-x-auto">
-                                      {typeof tool.result === 'string' 
+                                      {typeof tool.result === 'string'
                                         ? tool.result.substring(0, 200) + (tool.result.length > 200 ? '...' : '')
                                         : JSON.stringify(tool.result, null, 2).substring(0, 200) + '...'}
                                     </pre>

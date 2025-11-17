@@ -15,7 +15,11 @@ export class AnimeAgent {
             name: 'AnimeExpert',
             instructions: ANIME_AGENT_SYSTEM_PROMPT,
             tools: animeAgentTools,
-            model: "gpt-4.1-mini-2025-04-14"
+            model: "gpt-4.1-2025-04-14",
+            modelSettings: {
+                toolChoice: 'auto', // Let model decide when to use tools
+                
+            }
         });
 
         this.session = new CustomMemorySession();
@@ -33,6 +37,7 @@ export class AnimeAgent {
 
     async *streamChat(message: string): AsyncGenerator<StreamEvent> {
         try {
+            console.log('[streamChat] Starting stream for message:', message);
             const result = await run(this.agent, message, {
                 session: this.session,
                 stream: true
@@ -41,7 +46,19 @@ export class AnimeAgent {
             let currentToolCall: { name: string; args: string; timestamp: number } | null = null;
             let accumulatedText = '';
 
+            console.log('[streamChat] Stream started, listening for events...');
             for await (const event of result) {
+                // Log new items to see which tools were called
+                if (result.newItems && result.newItems.length > 0) {
+                    const toolItems = result.newItems.filter((item: any) => item.type === 'tool_call_item');
+                    if (toolItems.length > 0) {
+                        console.log('[streamChat] 🔧 Tool called:', toolItems.map((item: any) => 
+                            item.rawItem?.name || item.rawItem?.function?.name || 'unknown'
+                        ));
+                    }
+                }
+                
+                console.log('[streamChat] Event received:', event.type, event);
                 // Handle raw model stream events (text deltas)
                 if (event.type === 'raw_model_stream_event') {
                     const data = event.data as any;
@@ -62,47 +79,47 @@ export class AnimeAgent {
                     const item = event.item as any;
                     const eventName = event.name as string;
 
-                    // Tool call started
+                    // Tool call started - emit immediately so UI shows it
                     if (item.type === 'tool_call_item' && eventName === 'tool_call_started') {
+                        const toolName = item.name || 'unknown_tool';
                         currentToolCall = {
-                            name: item.name || 'unknown_tool',
+                            name: toolName,
                             args: '',
                             timestamp: Date.now()
                         };
+
+                        // Emit tool_call_start immediately when tool starts
+                        yield {
+                            type: 'tool_call_start',
+                            toolName: toolName,
+                            toolArgs: {},
+                            timestamp: Date.now()
+                        };
+
+                        console.log('[streamChat] Tool started:', toolName);
                     }
 
-                    // Tool call arguments
-                    if (item.type === 'tool_call_item' && item.arguments) {
+                    // Tool call arguments - update with args
+                    if (item.type === 'tool_call_item' && item.arguments && eventName === 'tool_call_completed') {
                         if (currentToolCall) {
                             currentToolCall.args = item.arguments;
-                        }
-                    }
-
-                    // Tool call completed - emit start event with args
-                    if (item.type === 'tool_call_item' && eventName === 'tool_call_completed') {
-                        try {
-                            const parsedArgs = item.arguments ? JSON.parse(item.arguments) : {};
-                            yield {
-                                type: 'tool_call_start',
-                                toolName: item.name || 'unknown_tool',
-                                toolArgs: parsedArgs,
-                                timestamp: Date.now()
-                            };
-                        } catch {
-                            yield {
-                                type: 'tool_call_start',
-                                toolName: item.name || 'unknown_tool',
-                                toolArgs: item.arguments || {},
-                                timestamp: Date.now()
-                            };
+                            try {
+                                const parsedArgs = JSON.parse(item.arguments);
+                                console.log('[streamChat] Tool args:', parsedArgs);
+                            } catch {
+                                console.log('[streamChat] Tool args (raw):', item.arguments);
+                            }
                         }
                     }
 
                     // Tool output received
                     if (item.type === 'tool_call_output_item' && eventName === 'tool_call_output_added') {
+                        const toolName = item.tool_call_name || 'unknown_tool';
+                        console.log('[streamChat] Tool completed:', toolName);
+
                         yield {
                             type: 'tool_call_end',
-                            toolName: item.tool_call_name || 'unknown_tool',
+                            toolName: toolName,
                             toolResult: item.output || 'No output',
                             timestamp: Date.now()
                         };
@@ -130,6 +147,17 @@ export class AnimeAgent {
                 }
             }
 
+            // Log summary of all tools used
+            const toolsUsed = result.newItems
+                .filter((item: any) => item.type === 'tool_call_item')
+                .map((item: any) => item.rawItem?.name || item.rawItem?.function?.name || 'unknown');
+            
+            if (toolsUsed.length > 0) {
+                console.log('[streamChat] ✅ Tools used in this conversation:', toolsUsed);
+            } else {
+                console.log('[streamChat] ⚠️ No tools were called in this conversation');
+            }
+
             yield {
                 type: 'complete',
                 content: accumulatedText,
@@ -143,6 +171,57 @@ export class AnimeAgent {
                 content: 'Failed to get response from anime agent',
                 timestamp: Date.now()
             };
+        }
+    }
+
+    /**
+     * Simple text-only streaming using toTextStream() helper
+     * Returns a ReadableStream compatible with Web Streams API
+     */
+    async streamTextOnly(message: string) {
+        const result = await run(this.agent, message, {
+            session: this.session,
+            stream: true
+        });
+
+        // Use toTextStream() helper for simple text streaming
+        const textStream = result.toTextStream({
+            compatibleWithNodeStreams: false, // Use Web Streams API for Next.js
+        });
+
+        // Ensure completion is awaited in the background
+        result.completed.catch(error => {
+            console.error('Stream completion error:', error);
+        });
+
+        return textStream;
+    }
+
+    /**
+     * Listen to all events - useful for debugging and understanding the stream
+     * Demonstrates how to inspect each event as it arrives
+     */
+    async listenToAllEvents(message: string): Promise<void> {
+        const result = await run(this.agent, message, {
+            session: this.session,
+            stream: true
+        });
+
+        for await (const event of result) {
+            // these are the raw events from the model
+            if (event.type === 'raw_model_stream_event') {
+                console.log(`${event.type} %o`, event.data);
+            }
+
+            // agent updated events
+            if (event.type === 'agent_updated_stream_event') {
+                console.log(`${event.type} %s`, event.agent.name);
+            }
+
+            // Agent SDK specific events
+            if (event.type === 'run_item_stream_event') {
+                console.log(`${event.type} %o`, event.item);
+            }
         }
     }
 

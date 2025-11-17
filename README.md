@@ -111,7 +111,9 @@ See [MAL_SETUP.md](./MAL_SETUP.md) for complete setup instructions.
 npm run dev
 ```
 
-2. Open [http://localhost:3000/chat](http://localhost:3000/chat) in your browser
+2. Open one of the chat interfaces in your browser:
+   - **Full Featured Chat**: [http://localhost:3000/chat](http://localhost:3000/chat) - Shows tool calls and detailed events
+   - **Simple Text Chat**: [http://localhost:3000/chat-simple](http://localhost:3000/chat-simple) - Clean text-only streaming
 
 3. Start chatting with the AI anime assistant!
 
@@ -135,7 +137,10 @@ Try these prompts with the chatbot:
 1. **Frontend**: Next.js 16 with React 19, streaming UI updates
 2. **AI Agent**: OpenAI Agents SDK with custom tools
 3. **Session Management**: Custom memory session that persists conversation context
-4. **Tools**:
+4. **Streaming**: Two streaming modes available:
+   - **Full Event Streaming** (`/chat`): Streams text, tool calls, and agent events
+   - **Simple Text Streaming** (`/chat-simple`): Uses `toTextStream()` for text-only output
+5. **Tools**:
    - `get_user_watched_anime`: Fetches user's MAL anime list
    - `search_mal_anime`: Searches MyAnimeList database
    - `get_anime_rankings`: Gets top-ranked anime
@@ -163,20 +168,60 @@ Try these prompts with the chatbot:
 src/
 ├── app/
 │   ├── ai/
-│   │   ├── animeAgent.ts          # Main AI agent
+│   │   ├── animeAgent.ts          # Main AI agent with streaming
 │   │   ├── animeAgentPrompt.ts    # System prompt
 │   │   ├── animeAgentTools.ts     # Tool definitions
 │   │   └── sessionManager.ts      # Session management
 │   ├── api/
-│   │   ├── chat/stream/route.ts   # Streaming chat API
+│   │   ├── chat/
+│   │   │   ├── stream/route.ts    # Full event streaming API
+│   │   │   └── text-stream/route.ts # Simple text streaming API
 │   │   └── mal/auth/route.ts      # MAL token management
 │   ├── services/
 │   │   ├── chatbotService.ts      # Chatbot service
 │   │   └── malService.ts          # MAL API service
-│   └── chat/page.tsx              # Chat UI
+│   ├── chat/page.tsx              # Full featured chat UI
+│   └── chat-simple/page.tsx       # Simple text streaming UI
 scripts/
 └── setup-mal-token.js             # MAL token setup script
 ```
+
+## Streaming Implementation
+
+This project demonstrates two approaches to streaming with OpenAI Agents SDK:
+
+### 1. Full Event Streaming (`/chat`)
+Processes all stream events for detailed control:
+- Text deltas for real-time text updates
+- Tool call events (start/end) with arguments and results
+- Agent thinking and handoff events
+- Complete control over UI updates
+
+```typescript
+const result = await run(agent, message, { stream: true });
+for await (const event of result) {
+  // Handle different event types
+  if (event.type === 'raw_model_stream_event') { /* ... */ }
+  if (event.type === 'run_item_stream_event') { /* ... */ }
+}
+```
+
+### 2. Simple Text Streaming (`/chat-simple`)
+Uses `toTextStream()` helper for cleaner text-only streaming:
+- Simpler implementation when you only need text output
+- Direct stream of text chunks
+- Less code, easier to maintain
+
+```typescript
+const result = await run(agent, message, { stream: true });
+const textStream = result.toTextStream({ compatibleWithNodeStreams: false });
+// Stream directly to response
+return new Response(textStream);
+```
+
+Choose the approach that fits your needs:
+- Use **full event streaming** when you need to show tool calls, loading states, or detailed agent behavior
+- Use **simple text streaming** when you only need the final text output
 
 ## Configuration
 
