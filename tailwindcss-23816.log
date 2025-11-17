@@ -1,0 +1,318 @@
+2025-11-17T22:10:34.921349Z  INFO tailwindcss_oxide::scanner: Provided sources:
+2025-11-17T22:10:34.921872Z  INFO tailwindcss_oxide::scanner: Source: PublicSourceEntry { base: "C:\\Users\\aakas\\Downloads\\Kiro\\MyAniGPT", pattern: "**/*", negated: false }
+2025-11-17T22:10:34.922610Z  INFO tailwindcss_oxide::scanner: Optimized sources:
+2025-11-17T22:10:34.922629Z  INFO tailwindcss_oxide::scanner: Source: Auto { base: "C:\\Users\\aakas\\Downloads\\Kiro\\MyAniGPT" }
+2025-11-17T22:10:34.924237Z  INFO scan_sources: tailwindcss_oxide::scanner: enter
+2025-11-17T22:10:34.925349Z  INFO scan_sources: tailwindcss_oxide::scanner: Discovering "C:\\Users\\aakas\\Downloads\\Kiro\\MyAniGPT\\.env.local.example"
+2025-11-17T22:10:34.925822Z  INFO scan_sources: tailwindcss_oxide::scanner: Discovering "C:\\Users\\aakas\\Downloads\\Kiro\\MyAniGPT\\.vscode"
+2025-11-17T22:10:34.925907Z  INFO scan_sources: tailwindcss_oxide::scanner: Discovering "C:\\Users\\aakas\\Downloads\\Kiro\\MyAniGPT\\.vscode\\settings.json"
+2025-11-17T22:10:34.925957Z  INFO scan_sources: tailwindcss_oxide::scanner: Discovering "C:\\Users\\aakas\\Downloads\\Kiro\\MyAniGPT\\eslint.config.mjs"
+2025-11-17T22:10:34.925996Z  INFO scan_sources: tailwindcss_oxide::scanner: Discovering "C:\\Users\\aakas\\Downloads\\Kiro\\MyAniGPT\\next.config.ts"
+2025-11-17T22:10:34.926122Z  INFO scan_sources: tailwindcss_oxide::scanner: Discovering "C:\\Users\\aakas\\Downloads\\Kiro\\MyAniGPT\\package.json"
+2025-11-17T22:10:34.926154Z  INFO scan_sources: tailwindcss_oxide::scanner: Discovering "C:\\Users\\aakas\\Downloads\\Kiro\\MyAniGPT\\postcss.config.mjs"
+2025-11-17T22:10:34.926204Z  INFO scan_sources: tailwindcss_oxide::scanner: Discovering "C:\\Users\\aakas\\Downloads\\Kiro\\MyAniGPT\\public"
+2025-11-17T22:10:34.926277Z  INFO scan_sources: tailwindcss_oxide::scanner: Discovering "C:\\Users\\aakas\\Downloads\\Kiro\\MyAniGPT\\README.md"
+2025-11-17T22:10:34.926326Z  INFO scan_sources: tailwindcss_oxide::scanner: Discovering "C:\\Users\\aakas\\Downloads\\Kiro\\MyAniGPT\\scripts"
+2025-11-17T22:10:34.926415Z  INFO scan_sources: tailwindcss_oxide::scanner: Discovering "C:\\Users\\aakas\\Downloads\\Kiro\\MyAniGPT\\src"
+2025-11-17T22:10:34.926499Z  INFO scan_sources: tailwindcss_oxide::scanner: Discovering "C:\\Users\\aakas\\Downloads\\Kiro\\MyAniGPT\\src\\app"
+2025-11-17T22:10:34.926584Z  INFO scan_sources: tailwindcss_oxide::scanner: Discovering "C:\\Users\\aakas\\Downloads\\Kiro\\MyAniGPT\\src\\app\\ai"
+2025-11-17T22:10:34.926656Z  INFO scan_sources: tailwindcss_oxide::scanner: Discovering "C:\\Users\\aakas\\Downloads\\Kiro\\MyAniGPT\\src\\app\\ai\\animeAgent.ts"
+2025-11-17T22:10:34.926687Z  INFO scan_sources: tailwindcss_oxide::scanner: Discovering "C:\\Users\\aakas\\Downloads\\Kiro\\MyAniGPT\\src\\app\\ai\\animeAgentPrompt.ts"
+2025-11-17T22:10:34.926719Z  INFO scan_sources: tailwindcss_oxide::scanner: Discovering "C:\\Users\\aakas\\Downloads\\Kiro\\MyAniGPT\\src\\app\\ai\\animeAgentTools.ts"
+2025-11-17T22:10:34.926752Z  INFO scan_sources: tailwindcss_oxide::scanner: Discovering "C:\\Users\\aakas\\Downloads\\Kiro\\MyAniGPT\\src\\app\\ai\\sessionManager.ts"
+2025-11-17T22:10:34.926809Z  INFO scan_sources: tailwindcss_oxide::scanner: Discovering "C:\\Users\\aakas\\Downloads\\Kiro\\MyAniGPT\\src\\app\\api"
+2025-11-17T22:10:34.926897Z  INFO scan_sources: tailwindcss_oxide::scanner: Discovering "C:\\Users\\aakas\\Downloads\\Kiro\\MyAniGPT\\src\\app\\api\\auth"
+2025-11-17T22:10:34.926978Z  INFO scan_sources: tailwindcss_oxide::scanner: Discovering "C:\\Users\\aakas\\Downloads\\Kiro\\MyAniGPT\\src\\app\\api\\auth\\login"
+2025-11-17T22:10:34.927043Z  INFO scan_sources: tailwindcss_oxide::scanner: Discovering "C:\\Users\\aakas\\Downloads\\Kiro\\MyAniGPT\\src\\app\\api\\auth\\login\\route.ts"
+2025-11-17T22:10:34.927124Z  INFO scan_sources: tailwindcss_oxide::scanner: Discovering "C:\\Users\\aakas\\Downloads\\Kiro\\MyAniGPT\\src\\app\\api\\chat"
+2025-11-17T22:10:34.927187Z  INFO scan_sources: tailwindcss_oxide::scanner: Discovering "C:\\Users\\aakas\\Downloads\\Kiro\\MyAniGPT\\src\\app\\api\\chat\\route.ts"
+2025-11-17T22:10:34.927274Z  INFO scan_sources: tailwindcss_oxide::scanner: Discovering "C:\\Users\\aakas\\Downloads\\Kiro\\MyAniGPT\\src\\app\\api\\chat\\stream"
+2025-11-17T22:10:34.927342Z  INFO scan_sources: tailwindcss_oxide::scanner: Discovering "C:\\Users\\aakas\\Downloads\\Kiro\\MyAniGPT\\src\\app\\api\\chat\\stream\\route.ts"
+2025-11-17T22:10:34.927401Z  INFO scan_sources: tailwindcss_oxide::scanner: Discovering "C:\\Users\\aakas\\Downloads\\Kiro\\MyAniGPT\\src\\app\\api\\chat\\text-stream"
+2025-11-17T22:10:34.927465Z  INFO scan_sources: tailwindcss_oxide::scanner: Discovering "C:\\Users\\aakas\\Downloads\\Kiro\\MyAniGPT\\src\\app\\api\\chat\\text-stream\\route.ts"
+2025-11-17T22:10:34.927532Z  INFO scan_sources: tailwindcss_oxide::scanner: Discovering "C:\\Users\\aakas\\Downloads\\Kiro\\MyAniGPT\\src\\app\\api\\mal"
+2025-11-17T22:10:34.927610Z  INFO scan_sources: tailwindcss_oxide::scanner: Discovering "C:\\Users\\aakas\\Downloads\\Kiro\\MyAniGPT\\src\\app\\api\\mal\\callback"
+2025-11-17T22:10:34.927672Z  INFO scan_sources: tailwindcss_oxide::scanner: Discovering "C:\\Users\\aakas\\Downloads\\Kiro\\MyAniGPT\\src\\app\\api\\mal\\callback\\route.ts"
+2025-11-17T22:10:34.927728Z  INFO scan_sources: tailwindcss_oxide::scanner: Discovering "C:\\Users\\aakas\\Downloads\\Kiro\\MyAniGPT\\src\\app\\api\\mal\\login"
+2025-11-17T22:10:34.927788Z  INFO scan_sources: tailwindcss_oxide::scanner: Discovering "C:\\Users\\aakas\\Downloads\\Kiro\\MyAniGPT\\src\\app\\api\\mal\\login\\route.ts"
+2025-11-17T22:10:34.927863Z  INFO scan_sources: tailwindcss_oxide::scanner: Discovering "C:\\Users\\aakas\\Downloads\\Kiro\\MyAniGPT\\src\\app\\chat"
+2025-11-17T22:10:34.927923Z  INFO scan_sources: tailwindcss_oxide::scanner: Discovering "C:\\Users\\aakas\\Downloads\\Kiro\\MyAniGPT\\src\\app\\chat\\page.tsx"
+2025-11-17T22:10:34.927978Z  INFO scan_sources: tailwindcss_oxide::scanner: Discovering "C:\\Users\\aakas\\Downloads\\Kiro\\MyAniGPT\\src\\app\\chat-simple"
+2025-11-17T22:10:34.928039Z  INFO scan_sources: tailwindcss_oxide::scanner: Discovering "C:\\Users\\aakas\\Downloads\\Kiro\\MyAniGPT\\src\\app\\chat-simple\\page.tsx"
+2025-11-17T22:10:34.928095Z  INFO scan_sources: tailwindcss_oxide::scanner: Discovering "C:\\Users\\aakas\\Downloads\\Kiro\\MyAniGPT\\src\\app\\components"
+2025-11-17T22:10:34.928161Z  INFO scan_sources: tailwindcss_oxide::scanner: Discovering "C:\\Users\\aakas\\Downloads\\Kiro\\MyAniGPT\\src\\app\\components\\StreamingIndicator.tsx"
+2025-11-17T22:10:34.928206Z  INFO scan_sources: tailwindcss_oxide::scanner: Discovering "C:\\Users\\aakas\\Downloads\\Kiro\\MyAniGPT\\src\\app\\globals.css"
+2025-11-17T22:10:34.928236Z  INFO scan_sources: tailwindcss_oxide::scanner: Discovering "C:\\Users\\aakas\\Downloads\\Kiro\\MyAniGPT\\src\\app\\layout.tsx"
+2025-11-17T22:10:34.928266Z  INFO scan_sources: tailwindcss_oxide::scanner: Discovering "C:\\Users\\aakas\\Downloads\\Kiro\\MyAniGPT\\src\\app\\page.tsx"
+2025-11-17T22:10:34.928314Z  INFO scan_sources: tailwindcss_oxide::scanner: Discovering "C:\\Users\\aakas\\Downloads\\Kiro\\MyAniGPT\\src\\app\\services"
+2025-11-17T22:10:34.928430Z  INFO scan_sources: tailwindcss_oxide::scanner: Discovering "C:\\Users\\aakas\\Downloads\\Kiro\\MyAniGPT\\src\\app\\services\\chatbotService.ts"
+2025-11-17T22:10:34.928485Z  INFO scan_sources: tailwindcss_oxide::scanner: Discovering "C:\\Users\\aakas\\Downloads\\Kiro\\MyAniGPT\\src\\app\\services\\malService.ts"
+2025-11-17T22:10:34.928715Z  INFO scan_sources: tailwindcss_oxide::scanner: Discovering "C:\\Users\\aakas\\Downloads\\Kiro\\MyAniGPT\\STREAMING.md"
+2025-11-17T22:10:34.928772Z  INFO scan_sources: tailwindcss_oxide::scanner: Discovering "C:\\Users\\aakas\\Downloads\\Kiro\\MyAniGPT\\tsconfig.json"
+2025-11-17T22:10:34.928850Z  INFO scan_sources: tailwindcss_oxide::scanner: exit
+2025-11-17T22:10:34.928862Z  INFO extract_candidates: tailwindcss_oxide::scanner: enter
+2025-11-17T22:10:34.928869Z  INFO extract_candidates:read_all_files: tailwindcss_oxide::scanner: enter
+2025-11-17T22:10:34.928873Z  INFO extract_candidates:read_all_files: tailwindcss_oxide::scanner: Reading 26 file(s)
+2025-11-17T22:10:34.929753Z  INFO tailwindcss_oxide::scanner: Reading "C:\\Users\\aakas\\Downloads\\Kiro\\MyAniGPT\\src\\app\\api\\chat\\stream\\route.ts"
+2025-11-17T22:10:34.929793Z  INFO tailwindcss_oxide::scanner: Reading "C:\\Users\\aakas\\Downloads\\Kiro\\MyAniGPT\\.env.local.example"
+2025-11-17T22:10:34.929793Z  INFO tailwindcss_oxide::scanner: Reading "C:\\Users\\aakas\\Downloads\\Kiro\\MyAniGPT\\src\\app\\components\\StreamingIndicator.tsx"
+2025-11-17T22:10:34.929857Z  INFO tailwindcss_oxide::scanner: Reading "C:\\Users\\aakas\\Downloads\\Kiro\\MyAniGPT\\src\\app\\services\\chatbotService.ts"
+2025-11-17T22:10:34.929899Z  INFO tailwindcss_oxide::scanner: Reading "C:\\Users\\aakas\\Downloads\\Kiro\\MyAniGPT\\.vscode\\settings.json"
+2025-11-17T22:10:34.929908Z  INFO tailwindcss_oxide::scanner: Reading "C:\\Users\\aakas\\Downloads\\Kiro\\MyAniGPT\\src\\app\\api\\chat\\text-stream\\route.ts"
+2025-11-17T22:10:34.929961Z  INFO tailwindcss_oxide::scanner: Reading "C:\\Users\\aakas\\Downloads\\Kiro\\MyAniGPT\\src\\app\\layout.tsx"
+2025-11-17T22:10:34.929965Z  INFO tailwindcss_oxide::scanner: Reading "C:\\Users\\aakas\\Downloads\\Kiro\\MyAniGPT\\src\\app\\api\\mal\\login\\route.ts"
+2025-11-17T22:10:34.929972Z  INFO tailwindcss_oxide::scanner: Reading "C:\\Users\\aakas\\Downloads\\Kiro\\MyAniGPT\\src\\app\\services\\malService.ts"
+2025-11-17T22:10:34.930020Z  INFO tailwindcss_oxide::scanner: Reading "C:\\Users\\aakas\\Downloads\\Kiro\\MyAniGPT\\eslint.config.mjs"
+2025-11-17T22:10:34.930055Z  INFO tailwindcss_oxide::scanner: Reading "C:\\Users\\aakas\\Downloads\\Kiro\\MyAniGPT\\src\\app\\chat\\page.tsx"
+2025-11-17T22:10:34.930074Z  INFO tailwindcss_oxide::scanner: Reading "C:\\Users\\aakas\\Downloads\\Kiro\\MyAniGPT\\src\\app\\api\\mal\\callback\\route.ts"
+2025-11-17T22:10:34.930079Z  INFO tailwindcss_oxide::scanner: Reading "C:\\Users\\aakas\\Downloads\\Kiro\\MyAniGPT\\STREAMING.md"
+2025-11-17T22:10:34.930076Z  INFO tailwindcss_oxide::scanner: Reading "C:\\Users\\aakas\\Downloads\\Kiro\\MyAniGPT\\README.md"
+2025-11-17T22:10:34.930112Z  INFO tailwindcss_oxide::scanner: Reading "C:\\Users\\aakas\\Downloads\\Kiro\\MyAniGPT\\next.config.ts"
+2025-11-17T22:10:34.930172Z  INFO tailwindcss_oxide::scanner: Reading "C:\\Users\\aakas\\Downloads\\Kiro\\MyAniGPT\\src\\app\\page.tsx"
+2025-11-17T22:10:34.930174Z  INFO tailwindcss_oxide::scanner: Reading "C:\\Users\\aakas\\Downloads\\Kiro\\MyAniGPT\\src\\app\\chat-simple\\page.tsx"
+2025-11-17T22:10:34.930207Z  INFO tailwindcss_oxide::scanner: Reading "C:\\Users\\aakas\\Downloads\\Kiro\\MyAniGPT\\tsconfig.json"
+2025-11-17T22:10:34.930218Z  INFO tailwindcss_oxide::scanner: Reading "C:\\Users\\aakas\\Downloads\\Kiro\\MyAniGPT\\src\\app\\ai\\animeAgent.ts"
+2025-11-17T22:10:34.930228Z  INFO tailwindcss_oxide::scanner: Reading "C:\\Users\\aakas\\Downloads\\Kiro\\MyAniGPT\\src\\app\\ai\\animeAgentTools.ts"
+2025-11-17T22:10:34.930285Z  INFO tailwindcss_oxide::scanner: Reading "C:\\Users\\aakas\\Downloads\\Kiro\\MyAniGPT\\src\\app\\ai\\animeAgentPrompt.ts"
+2025-11-17T22:10:34.930294Z  INFO tailwindcss_oxide::scanner: Reading "C:\\Users\\aakas\\Downloads\\Kiro\\MyAniGPT\\src\\app\\api\\auth\\login\\route.ts"
+2025-11-17T22:10:34.930292Z  INFO tailwindcss_oxide::scanner: Reading "C:\\Users\\aakas\\Downloads\\Kiro\\MyAniGPT\\postcss.config.mjs"
+2025-11-17T22:10:34.930191Z  INFO tailwindcss_oxide::scanner: Reading "C:\\Users\\aakas\\Downloads\\Kiro\\MyAniGPT\\package.json"
+2025-11-17T22:10:34.930298Z  INFO tailwindcss_oxide::scanner: Reading "C:\\Users\\aakas\\Downloads\\Kiro\\MyAniGPT\\src\\app\\ai\\sessionManager.ts"
+2025-11-17T22:10:34.930342Z  INFO tailwindcss_oxide::scanner: Reading "C:\\Users\\aakas\\Downloads\\Kiro\\MyAniGPT\\src\\app\\api\\chat\\route.ts"
+2025-11-17T22:10:34.930448Z  INFO extract_candidates:read_all_files: tailwindcss_oxide::scanner: exit
+2025-11-17T22:10:34.930470Z  INFO extract_candidates:parse_all_blobs: tailwindcss_oxide::scanner: enter
+2025-11-17T22:10:34.930475Z  INFO extract_candidates:parse_all_blobs:extract: tailwindcss_oxide::scanner: enter
+2025-11-17T22:10:34.931321Z  INFO extract_candidates:parse_all_blobs:extract: tailwindcss_oxide::scanner: exit
+2025-11-17T22:10:34.931344Z  INFO extract_candidates:parse_all_blobs: tailwindcss_oxide::scanner: exit
+2025-11-17T22:10:34.931349Z  INFO extract_candidates:read_all_files: tailwindcss_oxide::scanner: enter
+2025-11-17T22:10:34.931352Z  INFO extract_candidates:read_all_files: tailwindcss_oxide::scanner: Reading 1 file(s)
+2025-11-17T22:10:34.931483Z  INFO extract_candidates:read_all_files: tailwindcss_oxide::scanner: Reading "C:\\Users\\aakas\\Downloads\\Kiro\\MyAniGPT\\src\\app\\globals.css"
+2025-11-17T22:10:34.931490Z  INFO extract_candidates:read_all_files: tailwindcss_oxide::scanner: exit
+2025-11-17T22:10:34.931495Z  INFO extract_candidates:extract_css_variables: tailwindcss_oxide::scanner: enter
+2025-11-17T22:10:34.931498Z  INFO extract_candidates:extract_css_variables:extract: tailwindcss_oxide::scanner: enter
+2025-11-17T22:10:34.931587Z  INFO extract_candidates:extract_css_variables:extract: tailwindcss_oxide::scanner: exit
+2025-11-17T22:10:34.931593Z  INFO extract_candidates:extract_css_variables: tailwindcss_oxide::scanner: exit
+2025-11-17T22:10:34.931938Z  INFO extract_candidates: tailwindcss_oxide::scanner: exit
+2025-11-17T22:10:34.932351Z  INFO get_files: tailwindcss_oxide::scanner: enter
+2025-11-17T22:10:34.932357Z  INFO get_files:scan_sources: tailwindcss_oxide::scanner: enter
+2025-11-17T22:10:34.933610Z  INFO get_files:scan_sources: tailwindcss_oxide::scanner: Discovering "C:\\Users\\aakas\\Downloads\\Kiro\\MyAniGPT\\.vscode"
+2025-11-17T22:10:34.934000Z  INFO get_files:scan_sources: tailwindcss_oxide::scanner: Discovering "C:\\Users\\aakas\\Downloads\\Kiro\\MyAniGPT\\public"
+2025-11-17T22:10:34.934113Z  INFO get_files:scan_sources: tailwindcss_oxide::scanner: Discovering "C:\\Users\\aakas\\Downloads\\Kiro\\MyAniGPT\\scripts"
+2025-11-17T22:10:34.934205Z  INFO get_files:scan_sources: tailwindcss_oxide::scanner: Discovering "C:\\Users\\aakas\\Downloads\\Kiro\\MyAniGPT\\src"
+2025-11-17T22:10:34.934284Z  INFO get_files:scan_sources: tailwindcss_oxide::scanner: Discovering "C:\\Users\\aakas\\Downloads\\Kiro\\MyAniGPT\\src\\app"
+2025-11-17T22:10:34.934369Z  INFO get_files:scan_sources: tailwindcss_oxide::scanner: Discovering "C:\\Users\\aakas\\Downloads\\Kiro\\MyAniGPT\\src\\app\\ai"
+2025-11-17T22:10:34.934531Z  INFO get_files:scan_sources: tailwindcss_oxide::scanner: Discovering "C:\\Users\\aakas\\Downloads\\Kiro\\MyAniGPT\\src\\app\\api"
+2025-11-17T22:10:34.934611Z  INFO get_files:scan_sources: tailwindcss_oxide::scanner: Discovering "C:\\Users\\aakas\\Downloads\\Kiro\\MyAniGPT\\src\\app\\api\\auth"
+2025-11-17T22:10:34.934695Z  INFO get_files:scan_sources: tailwindcss_oxide::scanner: Discovering "C:\\Users\\aakas\\Downloads\\Kiro\\MyAniGPT\\src\\app\\api\\auth\\login"
+2025-11-17T22:10:34.934812Z  INFO get_files:scan_sources: tailwindcss_oxide::scanner: Discovering "C:\\Users\\aakas\\Downloads\\Kiro\\MyAniGPT\\src\\app\\api\\chat"
+2025-11-17T22:10:34.934907Z  INFO get_files:scan_sources: tailwindcss_oxide::scanner: Discovering "C:\\Users\\aakas\\Downloads\\Kiro\\MyAniGPT\\src\\app\\api\\chat\\stream"
+2025-11-17T22:10:34.935011Z  INFO get_files:scan_sources: tailwindcss_oxide::scanner: Discovering "C:\\Users\\aakas\\Downloads\\Kiro\\MyAniGPT\\src\\app\\api\\chat\\text-stream"
+2025-11-17T22:10:34.935125Z  INFO get_files:scan_sources: tailwindcss_oxide::scanner: Discovering "C:\\Users\\aakas\\Downloads\\Kiro\\MyAniGPT\\src\\app\\api\\mal"
+2025-11-17T22:10:34.935202Z  INFO get_files:scan_sources: tailwindcss_oxide::scanner: Discovering "C:\\Users\\aakas\\Downloads\\Kiro\\MyAniGPT\\src\\app\\api\\mal\\callback"
+2025-11-17T22:10:34.935325Z  INFO get_files:scan_sources: tailwindcss_oxide::scanner: Discovering "C:\\Users\\aakas\\Downloads\\Kiro\\MyAniGPT\\src\\app\\api\\mal\\login"
+2025-11-17T22:10:34.935549Z  INFO get_files:scan_sources: tailwindcss_oxide::scanner: Discovering "C:\\Users\\aakas\\Downloads\\Kiro\\MyAniGPT\\src\\app\\chat"
+2025-11-17T22:10:34.935662Z  INFO get_files:scan_sources: tailwindcss_oxide::scanner: Discovering "C:\\Users\\aakas\\Downloads\\Kiro\\MyAniGPT\\src\\app\\chat-simple"
+2025-11-17T22:10:34.935816Z  INFO get_files:scan_sources: tailwindcss_oxide::scanner: Discovering "C:\\Users\\aakas\\Downloads\\Kiro\\MyAniGPT\\src\\app\\components"
+2025-11-17T22:10:34.935979Z  INFO get_files:scan_sources: tailwindcss_oxide::scanner: Discovering "C:\\Users\\aakas\\Downloads\\Kiro\\MyAniGPT\\src\\app\\services"
+2025-11-17T22:10:34.936155Z  INFO get_files:scan_sources: tailwindcss_oxide::scanner: exit
+2025-11-17T22:10:34.936325Z  INFO get_files: tailwindcss_oxide::scanner: exit
+2025-11-17T22:10:34.936603Z  INFO get_globs: tailwindcss_oxide::scanner: enter
+2025-11-17T22:10:34.936614Z  INFO get_globs:scan_sources: tailwindcss_oxide::scanner: enter
+2025-11-17T22:10:34.939104Z  INFO get_globs:scan_sources: tailwindcss_oxide::scanner: Discovering "C:\\Users\\aakas\\Downloads\\Kiro\\MyAniGPT\\.vscode"
+2025-11-17T22:10:34.939457Z  INFO get_globs:scan_sources: tailwindcss_oxide::scanner: Discovering "C:\\Users\\aakas\\Downloads\\Kiro\\MyAniGPT\\public"
+2025-11-17T22:10:34.939571Z  INFO get_globs:scan_sources: tailwindcss_oxide::scanner: Discovering "C:\\Users\\aakas\\Downloads\\Kiro\\MyAniGPT\\scripts"
+2025-11-17T22:10:34.939664Z  INFO get_globs:scan_sources: tailwindcss_oxide::scanner: Discovering "C:\\Users\\aakas\\Downloads\\Kiro\\MyAniGPT\\src"
+2025-11-17T22:10:34.939747Z  INFO get_globs:scan_sources: tailwindcss_oxide::scanner: Discovering "C:\\Users\\aakas\\Downloads\\Kiro\\MyAniGPT\\src\\app"
+2025-11-17T22:10:34.939834Z  INFO get_globs:scan_sources: tailwindcss_oxide::scanner: Discovering "C:\\Users\\aakas\\Downloads\\Kiro\\MyAniGPT\\src\\app\\ai"
+2025-11-17T22:10:34.940011Z  INFO get_globs:scan_sources: tailwindcss_oxide::scanner: Discovering "C:\\Users\\aakas\\Downloads\\Kiro\\MyAniGPT\\src\\app\\api"
+2025-11-17T22:10:34.940101Z  INFO get_globs:scan_sources: tailwindcss_oxide::scanner: Discovering "C:\\Users\\aakas\\Downloads\\Kiro\\MyAniGPT\\src\\app\\api\\auth"
+2025-11-17T22:10:34.940187Z  INFO get_globs:scan_sources: tailwindcss_oxide::scanner: Discovering "C:\\Users\\aakas\\Downloads\\Kiro\\MyAniGPT\\src\\app\\api\\auth\\login"
+2025-11-17T22:10:34.940315Z  INFO get_globs:scan_sources: tailwindcss_oxide::scanner: Discovering "C:\\Users\\aakas\\Downloads\\Kiro\\MyAniGPT\\src\\app\\api\\chat"
+2025-11-17T22:10:34.940410Z  INFO get_globs:scan_sources: tailwindcss_oxide::scanner: Discovering "C:\\Users\\aakas\\Downloads\\Kiro\\MyAniGPT\\src\\app\\api\\chat\\stream"
+2025-11-17T22:10:34.940513Z  INFO get_globs:scan_sources: tailwindcss_oxide::scanner: Discovering "C:\\Users\\aakas\\Downloads\\Kiro\\MyAniGPT\\src\\app\\api\\chat\\text-stream"
+2025-11-17T22:10:34.940627Z  INFO get_globs:scan_sources: tailwindcss_oxide::scanner: Discovering "C:\\Users\\aakas\\Downloads\\Kiro\\MyAniGPT\\src\\app\\api\\mal"
+2025-11-17T22:10:34.940703Z  INFO get_globs:scan_sources: tailwindcss_oxide::scanner: Discovering "C:\\Users\\aakas\\Downloads\\Kiro\\MyAniGPT\\src\\app\\api\\mal\\callback"
+2025-11-17T22:10:34.940805Z  INFO get_globs:scan_sources: tailwindcss_oxide::scanner: Discovering "C:\\Users\\aakas\\Downloads\\Kiro\\MyAniGPT\\src\\app\\api\\mal\\login"
+2025-11-17T22:10:34.940930Z  INFO get_globs:scan_sources: tailwindcss_oxide::scanner: Discovering "C:\\Users\\aakas\\Downloads\\Kiro\\MyAniGPT\\src\\app\\chat"
+2025-11-17T22:10:34.941037Z  INFO get_globs:scan_sources: tailwindcss_oxide::scanner: Discovering "C:\\Users\\aakas\\Downloads\\Kiro\\MyAniGPT\\src\\app\\chat-simple"
+2025-11-17T22:10:34.941141Z  INFO get_globs:scan_sources: tailwindcss_oxide::scanner: Discovering "C:\\Users\\aakas\\Downloads\\Kiro\\MyAniGPT\\src\\app\\components"
+2025-11-17T22:10:34.941324Z  INFO get_globs:scan_sources: tailwindcss_oxide::scanner: Discovering "C:\\Users\\aakas\\Downloads\\Kiro\\MyAniGPT\\src\\app\\services"
+2025-11-17T22:10:34.941522Z  INFO get_globs:scan_sources: tailwindcss_oxide::scanner: exit
+2025-11-17T22:10:34.943962Z  INFO get_globs: tailwindcss_oxide::scanner: exit
+2025-11-17T22:11:22.868852Z  INFO scan_sources: tailwindcss_oxide::scanner: enter
+2025-11-17T22:11:22.871094Z  INFO scan_sources: tailwindcss_oxide::scanner: Discovering "C:\\Users\\aakas\\Downloads\\Kiro\\MyAniGPT\\.vscode"
+2025-11-17T22:11:22.872323Z  INFO scan_sources: tailwindcss_oxide::scanner: Discovering "C:\\Users\\aakas\\Downloads\\Kiro\\MyAniGPT\\public"
+2025-11-17T22:11:22.872565Z  INFO scan_sources: tailwindcss_oxide::scanner: Discovering "C:\\Users\\aakas\\Downloads\\Kiro\\MyAniGPT\\scripts"
+2025-11-17T22:11:22.872701Z  INFO scan_sources: tailwindcss_oxide::scanner: Discovering "C:\\Users\\aakas\\Downloads\\Kiro\\MyAniGPT\\src"
+2025-11-17T22:11:22.872827Z  INFO scan_sources: tailwindcss_oxide::scanner: Discovering "C:\\Users\\aakas\\Downloads\\Kiro\\MyAniGPT\\src\\app"
+2025-11-17T22:11:22.872958Z  INFO scan_sources: tailwindcss_oxide::scanner: Discovering "C:\\Users\\aakas\\Downloads\\Kiro\\MyAniGPT\\src\\app\\ai"
+2025-11-17T22:11:22.873181Z  INFO scan_sources: tailwindcss_oxide::scanner: Discovering "C:\\Users\\aakas\\Downloads\\Kiro\\MyAniGPT\\src\\app\\api"
+2025-11-17T22:11:22.873293Z  INFO scan_sources: tailwindcss_oxide::scanner: Discovering "C:\\Users\\aakas\\Downloads\\Kiro\\MyAniGPT\\src\\app\\api\\auth"
+2025-11-17T22:11:22.873407Z  INFO scan_sources: tailwindcss_oxide::scanner: Discovering "C:\\Users\\aakas\\Downloads\\Kiro\\MyAniGPT\\src\\app\\api\\auth\\login"
+2025-11-17T22:11:22.873629Z  INFO scan_sources: tailwindcss_oxide::scanner: Discovering "C:\\Users\\aakas\\Downloads\\Kiro\\MyAniGPT\\src\\app\\api\\chat"
+2025-11-17T22:11:22.873777Z  INFO scan_sources: tailwindcss_oxide::scanner: Discovering "C:\\Users\\aakas\\Downloads\\Kiro\\MyAniGPT\\src\\app\\api\\chat\\stream"
+2025-11-17T22:11:22.873951Z  INFO scan_sources: tailwindcss_oxide::scanner: Discovering "C:\\Users\\aakas\\Downloads\\Kiro\\MyAniGPT\\src\\app\\api\\chat\\text-stream"
+2025-11-17T22:11:22.874118Z  INFO scan_sources: tailwindcss_oxide::scanner: Discovering "C:\\Users\\aakas\\Downloads\\Kiro\\MyAniGPT\\src\\app\\api\\mal"
+2025-11-17T22:11:22.874229Z  INFO scan_sources: tailwindcss_oxide::scanner: Discovering "C:\\Users\\aakas\\Downloads\\Kiro\\MyAniGPT\\src\\app\\api\\mal\\callback"
+2025-11-17T22:11:22.874379Z  INFO scan_sources: tailwindcss_oxide::scanner: Discovering "C:\\Users\\aakas\\Downloads\\Kiro\\MyAniGPT\\src\\app\\api\\mal\\login"
+2025-11-17T22:11:22.874551Z  INFO scan_sources: tailwindcss_oxide::scanner: Discovering "C:\\Users\\aakas\\Downloads\\Kiro\\MyAniGPT\\src\\app\\api\\test-mal-update"
+2025-11-17T22:11:22.874648Z  INFO scan_sources: tailwindcss_oxide::scanner: Discovering "C:\\Users\\aakas\\Downloads\\Kiro\\MyAniGPT\\src\\app\\api\\test-mal-update\\route.ts"
+2025-11-17T22:11:22.874747Z  INFO scan_sources: tailwindcss_oxide::scanner: Discovering "C:\\Users\\aakas\\Downloads\\Kiro\\MyAniGPT\\src\\app\\chat"
+2025-11-17T22:11:22.875040Z  INFO scan_sources: tailwindcss_oxide::scanner: Discovering "C:\\Users\\aakas\\Downloads\\Kiro\\MyAniGPT\\src\\app\\chat-simple"
+2025-11-17T22:11:22.875190Z  INFO scan_sources: tailwindcss_oxide::scanner: Discovering "C:\\Users\\aakas\\Downloads\\Kiro\\MyAniGPT\\src\\app\\components"
+2025-11-17T22:11:22.875412Z  INFO scan_sources: tailwindcss_oxide::scanner: Discovering "C:\\Users\\aakas\\Downloads\\Kiro\\MyAniGPT\\src\\app\\services"
+2025-11-17T22:11:22.875686Z  INFO scan_sources: tailwindcss_oxide::scanner: exit
+2025-11-17T22:11:22.875695Z  INFO extract_candidates: tailwindcss_oxide::scanner: enter
+2025-11-17T22:11:22.875699Z  INFO extract_candidates:read_all_files: tailwindcss_oxide::scanner: enter
+2025-11-17T22:11:22.875703Z  INFO extract_candidates:read_all_files: tailwindcss_oxide::scanner: Reading 1 file(s)
+2025-11-17T22:11:22.875738Z  INFO extract_candidates:read_all_files: tailwindcss_oxide::scanner: Reading "C:\\Users\\aakas\\Downloads\\Kiro\\MyAniGPT\\src\\app\\api\\test-mal-update\\route.ts"
+2025-11-17T22:11:22.875745Z  INFO extract_candidates:read_all_files: tailwindcss_oxide::scanner: exit
+2025-11-17T22:11:22.875749Z  INFO extract_candidates:parse_all_blobs: tailwindcss_oxide::scanner: enter
+2025-11-17T22:11:22.875753Z  INFO extract_candidates:parse_all_blobs:extract: tailwindcss_oxide::scanner: enter
+2025-11-17T22:11:22.875764Z  INFO extract_candidates:parse_all_blobs:extract: tailwindcss_oxide::scanner: exit
+2025-11-17T22:11:22.875772Z  INFO extract_candidates:parse_all_blobs: tailwindcss_oxide::scanner: exit
+2025-11-17T22:11:22.875777Z  INFO extract_candidates: tailwindcss_oxide::scanner: exit
+2025-11-17T22:11:22.876166Z  INFO get_files: tailwindcss_oxide::scanner: enter
+2025-11-17T22:11:22.876174Z  INFO get_files:scan_sources: tailwindcss_oxide::scanner: enter
+2025-11-17T22:11:22.877726Z  INFO get_files:scan_sources: tailwindcss_oxide::scanner: Discovering "C:\\Users\\aakas\\Downloads\\Kiro\\MyAniGPT\\.vscode"
+2025-11-17T22:11:22.878107Z  INFO get_files:scan_sources: tailwindcss_oxide::scanner: Discovering "C:\\Users\\aakas\\Downloads\\Kiro\\MyAniGPT\\public"
+2025-11-17T22:11:22.878798Z  INFO get_files:scan_sources: tailwindcss_oxide::scanner: Discovering "C:\\Users\\aakas\\Downloads\\Kiro\\MyAniGPT\\scripts"
+2025-11-17T22:11:22.879171Z  INFO get_files:scan_sources: tailwindcss_oxide::scanner: Discovering "C:\\Users\\aakas\\Downloads\\Kiro\\MyAniGPT\\src"
+2025-11-17T22:11:22.879456Z  INFO get_files:scan_sources: tailwindcss_oxide::scanner: Discovering "C:\\Users\\aakas\\Downloads\\Kiro\\MyAniGPT\\src\\app"
+2025-11-17T22:11:22.879826Z  INFO get_files:scan_sources: tailwindcss_oxide::scanner: Discovering "C:\\Users\\aakas\\Downloads\\Kiro\\MyAniGPT\\src\\app\\ai"
+2025-11-17T22:11:22.880409Z  INFO get_files:scan_sources: tailwindcss_oxide::scanner: Discovering "C:\\Users\\aakas\\Downloads\\Kiro\\MyAniGPT\\src\\app\\api"
+2025-11-17T22:11:22.880701Z  INFO get_files:scan_sources: tailwindcss_oxide::scanner: Discovering "C:\\Users\\aakas\\Downloads\\Kiro\\MyAniGPT\\src\\app\\api\\auth"
+2025-11-17T22:11:22.880993Z  INFO get_files:scan_sources: tailwindcss_oxide::scanner: Discovering "C:\\Users\\aakas\\Downloads\\Kiro\\MyAniGPT\\src\\app\\api\\auth\\login"
+2025-11-17T22:11:22.881558Z  INFO get_files:scan_sources: tailwindcss_oxide::scanner: Discovering "C:\\Users\\aakas\\Downloads\\Kiro\\MyAniGPT\\src\\app\\api\\chat"
+2025-11-17T22:11:22.881780Z  INFO get_files:scan_sources: tailwindcss_oxide::scanner: Discovering "C:\\Users\\aakas\\Downloads\\Kiro\\MyAniGPT\\src\\app\\api\\chat\\stream"
+2025-11-17T22:11:22.881959Z  INFO get_files:scan_sources: tailwindcss_oxide::scanner: Discovering "C:\\Users\\aakas\\Downloads\\Kiro\\MyAniGPT\\src\\app\\api\\chat\\text-stream"
+2025-11-17T22:11:22.882127Z  INFO get_files:scan_sources: tailwindcss_oxide::scanner: Discovering "C:\\Users\\aakas\\Downloads\\Kiro\\MyAniGPT\\src\\app\\api\\mal"
+2025-11-17T22:11:22.882238Z  INFO get_files:scan_sources: tailwindcss_oxide::scanner: Discovering "C:\\Users\\aakas\\Downloads\\Kiro\\MyAniGPT\\src\\app\\api\\mal\\callback"
+2025-11-17T22:11:22.882398Z  INFO get_files:scan_sources: tailwindcss_oxide::scanner: Discovering "C:\\Users\\aakas\\Downloads\\Kiro\\MyAniGPT\\src\\app\\api\\mal\\login"
+2025-11-17T22:11:22.882559Z  INFO get_files:scan_sources: tailwindcss_oxide::scanner: Discovering "C:\\Users\\aakas\\Downloads\\Kiro\\MyAniGPT\\src\\app\\api\\test-mal-update"
+2025-11-17T22:11:22.882713Z  INFO get_files:scan_sources: tailwindcss_oxide::scanner: Discovering "C:\\Users\\aakas\\Downloads\\Kiro\\MyAniGPT\\src\\app\\chat"
+2025-11-17T22:11:22.882862Z  INFO get_files:scan_sources: tailwindcss_oxide::scanner: Discovering "C:\\Users\\aakas\\Downloads\\Kiro\\MyAniGPT\\src\\app\\chat-simple"
+2025-11-17T22:11:22.883085Z  INFO get_files:scan_sources: tailwindcss_oxide::scanner: Discovering "C:\\Users\\aakas\\Downloads\\Kiro\\MyAniGPT\\src\\app\\components"
+2025-11-17T22:11:22.883358Z  INFO get_files:scan_sources: tailwindcss_oxide::scanner: Discovering "C:\\Users\\aakas\\Downloads\\Kiro\\MyAniGPT\\src\\app\\services"
+2025-11-17T22:11:22.883656Z  INFO get_files:scan_sources: tailwindcss_oxide::scanner: exit
+2025-11-17T22:11:22.883811Z  INFO get_files: tailwindcss_oxide::scanner: exit
+2025-11-17T22:11:22.883978Z  INFO get_globs: tailwindcss_oxide::scanner: enter
+2025-11-17T22:11:22.884005Z  INFO get_globs: tailwindcss_oxide::scanner: exit
+2025-11-17T22:11:23.623926Z  INFO scan_sources: tailwindcss_oxide::scanner: enter
+2025-11-17T22:11:23.625630Z  INFO scan_sources: tailwindcss_oxide::scanner: Discovering "C:\\Users\\aakas\\Downloads\\Kiro\\MyAniGPT\\.vscode"
+2025-11-17T22:11:23.626117Z  INFO scan_sources: tailwindcss_oxide::scanner: Discovering "C:\\Users\\aakas\\Downloads\\Kiro\\MyAniGPT\\public"
+2025-11-17T22:11:23.626404Z  INFO scan_sources: tailwindcss_oxide::scanner: Discovering "C:\\Users\\aakas\\Downloads\\Kiro\\MyAniGPT\\scripts"
+2025-11-17T22:11:23.626573Z  INFO scan_sources: tailwindcss_oxide::scanner: Discovering "C:\\Users\\aakas\\Downloads\\Kiro\\MyAniGPT\\src"
+2025-11-17T22:11:23.626733Z  INFO scan_sources: tailwindcss_oxide::scanner: Discovering "C:\\Users\\aakas\\Downloads\\Kiro\\MyAniGPT\\src\\app"
+2025-11-17T22:11:23.626901Z  INFO scan_sources: tailwindcss_oxide::scanner: Discovering "C:\\Users\\aakas\\Downloads\\Kiro\\MyAniGPT\\src\\app\\ai"
+2025-11-17T22:11:23.627386Z  INFO scan_sources: tailwindcss_oxide::scanner: Discovering "C:\\Users\\aakas\\Downloads\\Kiro\\MyAniGPT\\src\\app\\api"
+2025-11-17T22:11:23.627594Z  INFO scan_sources: tailwindcss_oxide::scanner: Discovering "C:\\Users\\aakas\\Downloads\\Kiro\\MyAniGPT\\src\\app\\api\\auth"
+2025-11-17T22:11:23.627760Z  INFO scan_sources: tailwindcss_oxide::scanner: Discovering "C:\\Users\\aakas\\Downloads\\Kiro\\MyAniGPT\\src\\app\\api\\auth\\login"
+2025-11-17T22:11:23.627963Z  INFO scan_sources: tailwindcss_oxide::scanner: Discovering "C:\\Users\\aakas\\Downloads\\Kiro\\MyAniGPT\\src\\app\\api\\chat"
+2025-11-17T22:11:23.628127Z  INFO scan_sources: tailwindcss_oxide::scanner: Discovering "C:\\Users\\aakas\\Downloads\\Kiro\\MyAniGPT\\src\\app\\api\\chat\\stream"
+2025-11-17T22:11:23.628297Z  INFO scan_sources: tailwindcss_oxide::scanner: Discovering "C:\\Users\\aakas\\Downloads\\Kiro\\MyAniGPT\\src\\app\\api\\chat\\text-stream"
+2025-11-17T22:11:23.629144Z  INFO scan_sources: tailwindcss_oxide::scanner: Discovering "C:\\Users\\aakas\\Downloads\\Kiro\\MyAniGPT\\src\\app\\api\\mal"
+2025-11-17T22:11:23.629629Z  INFO scan_sources: tailwindcss_oxide::scanner: Discovering "C:\\Users\\aakas\\Downloads\\Kiro\\MyAniGPT\\src\\app\\api\\mal\\callback"
+2025-11-17T22:11:23.629868Z  INFO scan_sources: tailwindcss_oxide::scanner: Discovering "C:\\Users\\aakas\\Downloads\\Kiro\\MyAniGPT\\src\\app\\api\\mal\\login"
+2025-11-17T22:11:23.630057Z  INFO scan_sources: tailwindcss_oxide::scanner: Discovering "C:\\Users\\aakas\\Downloads\\Kiro\\MyAniGPT\\src\\app\\api\\test-mal-update"
+2025-11-17T22:11:23.630155Z  INFO scan_sources: tailwindcss_oxide::scanner: Discovering "C:\\Users\\aakas\\Downloads\\Kiro\\MyAniGPT\\src\\app\\api\\test-mal-update\\route.ts"
+2025-11-17T22:11:23.630266Z  INFO scan_sources: tailwindcss_oxide::scanner: Discovering "C:\\Users\\aakas\\Downloads\\Kiro\\MyAniGPT\\src\\app\\chat"
+2025-11-17T22:11:23.630597Z  INFO scan_sources: tailwindcss_oxide::scanner: Discovering "C:\\Users\\aakas\\Downloads\\Kiro\\MyAniGPT\\src\\app\\chat-simple"
+2025-11-17T22:11:23.630858Z  INFO scan_sources: tailwindcss_oxide::scanner: Discovering "C:\\Users\\aakas\\Downloads\\Kiro\\MyAniGPT\\src\\app\\components"
+2025-11-17T22:11:23.631201Z  INFO scan_sources: tailwindcss_oxide::scanner: Discovering "C:\\Users\\aakas\\Downloads\\Kiro\\MyAniGPT\\src\\app\\services"
+2025-11-17T22:11:23.631571Z  INFO scan_sources: tailwindcss_oxide::scanner: exit
+2025-11-17T22:11:23.631590Z  INFO extract_candidates: tailwindcss_oxide::scanner: enter
+2025-11-17T22:11:23.631595Z  INFO extract_candidates:read_all_files: tailwindcss_oxide::scanner: enter
+2025-11-17T22:11:23.631599Z  INFO extract_candidates:read_all_files: tailwindcss_oxide::scanner: Reading 1 file(s)
+2025-11-17T22:11:23.631696Z  INFO extract_candidates:read_all_files: tailwindcss_oxide::scanner: Reading "C:\\Users\\aakas\\Downloads\\Kiro\\MyAniGPT\\src\\app\\api\\test-mal-update\\route.ts"
+2025-11-17T22:11:23.631706Z  INFO extract_candidates:read_all_files: tailwindcss_oxide::scanner: exit
+2025-11-17T22:11:23.631711Z  INFO extract_candidates:parse_all_blobs: tailwindcss_oxide::scanner: enter
+2025-11-17T22:11:23.631776Z  INFO extract_candidates:parse_all_blobs:extract: tailwindcss_oxide::scanner: enter
+2025-11-17T22:11:23.631898Z  INFO extract_candidates:parse_all_blobs:extract: tailwindcss_oxide::scanner: exit
+2025-11-17T22:11:23.631908Z  INFO extract_candidates:parse_all_blobs: tailwindcss_oxide::scanner: exit
+2025-11-17T22:11:23.631948Z  INFO extract_candidates: tailwindcss_oxide::scanner: exit
+2025-11-17T22:11:23.632352Z  INFO get_files: tailwindcss_oxide::scanner: enter
+2025-11-17T22:11:23.632369Z  INFO get_files:scan_sources: tailwindcss_oxide::scanner: enter
+2025-11-17T22:11:23.633882Z  INFO get_files:scan_sources: tailwindcss_oxide::scanner: Discovering "C:\\Users\\aakas\\Downloads\\Kiro\\MyAniGPT\\.vscode"
+2025-11-17T22:11:23.634364Z  INFO get_files:scan_sources: tailwindcss_oxide::scanner: Discovering "C:\\Users\\aakas\\Downloads\\Kiro\\MyAniGPT\\public"
+2025-11-17T22:11:23.634564Z  INFO get_files:scan_sources: tailwindcss_oxide::scanner: Discovering "C:\\Users\\aakas\\Downloads\\Kiro\\MyAniGPT\\scripts"
+2025-11-17T22:11:23.634715Z  INFO get_files:scan_sources: tailwindcss_oxide::scanner: Discovering "C:\\Users\\aakas\\Downloads\\Kiro\\MyAniGPT\\src"
+2025-11-17T22:11:23.634844Z  INFO get_files:scan_sources: tailwindcss_oxide::scanner: Discovering "C:\\Users\\aakas\\Downloads\\Kiro\\MyAniGPT\\src\\app"
+2025-11-17T22:11:23.634985Z  INFO get_files:scan_sources: tailwindcss_oxide::scanner: Discovering "C:\\Users\\aakas\\Downloads\\Kiro\\MyAniGPT\\src\\app\\ai"
+2025-11-17T22:11:23.635321Z  INFO get_files:scan_sources: tailwindcss_oxide::scanner: Discovering "C:\\Users\\aakas\\Downloads\\Kiro\\MyAniGPT\\src\\app\\api"
+2025-11-17T22:11:23.635484Z  INFO get_files:scan_sources: tailwindcss_oxide::scanner: Discovering "C:\\Users\\aakas\\Downloads\\Kiro\\MyAniGPT\\src\\app\\api\\auth"
+2025-11-17T22:11:23.635626Z  INFO get_files:scan_sources: tailwindcss_oxide::scanner: Discovering "C:\\Users\\aakas\\Downloads\\Kiro\\MyAniGPT\\src\\app\\api\\auth\\login"
+2025-11-17T22:11:23.635822Z  INFO get_files:scan_sources: tailwindcss_oxide::scanner: Discovering "C:\\Users\\aakas\\Downloads\\Kiro\\MyAniGPT\\src\\app\\api\\chat"
+2025-11-17T22:11:23.635983Z  INFO get_files:scan_sources: tailwindcss_oxide::scanner: Discovering "C:\\Users\\aakas\\Downloads\\Kiro\\MyAniGPT\\src\\app\\api\\chat\\stream"
+2025-11-17T22:11:23.636157Z  INFO get_files:scan_sources: tailwindcss_oxide::scanner: Discovering "C:\\Users\\aakas\\Downloads\\Kiro\\MyAniGPT\\src\\app\\api\\chat\\text-stream"
+2025-11-17T22:11:23.636359Z  INFO get_files:scan_sources: tailwindcss_oxide::scanner: Discovering "C:\\Users\\aakas\\Downloads\\Kiro\\MyAniGPT\\src\\app\\api\\mal"
+2025-11-17T22:11:23.636502Z  INFO get_files:scan_sources: tailwindcss_oxide::scanner: Discovering "C:\\Users\\aakas\\Downloads\\Kiro\\MyAniGPT\\src\\app\\api\\mal\\callback"
+2025-11-17T22:11:23.636652Z  INFO get_files:scan_sources: tailwindcss_oxide::scanner: Discovering "C:\\Users\\aakas\\Downloads\\Kiro\\MyAniGPT\\src\\app\\api\\mal\\login"
+2025-11-17T22:11:23.637003Z  INFO get_files:scan_sources: tailwindcss_oxide::scanner: Discovering "C:\\Users\\aakas\\Downloads\\Kiro\\MyAniGPT\\src\\app\\api\\test-mal-update"
+2025-11-17T22:11:23.637243Z  INFO get_files:scan_sources: tailwindcss_oxide::scanner: Discovering "C:\\Users\\aakas\\Downloads\\Kiro\\MyAniGPT\\src\\app\\chat"
+2025-11-17T22:11:23.637413Z  INFO get_files:scan_sources: tailwindcss_oxide::scanner: Discovering "C:\\Users\\aakas\\Downloads\\Kiro\\MyAniGPT\\src\\app\\chat-simple"
+2025-11-17T22:11:23.637570Z  INFO get_files:scan_sources: tailwindcss_oxide::scanner: Discovering "C:\\Users\\aakas\\Downloads\\Kiro\\MyAniGPT\\src\\app\\components"
+2025-11-17T22:11:23.637831Z  INFO get_files:scan_sources: tailwindcss_oxide::scanner: Discovering "C:\\Users\\aakas\\Downloads\\Kiro\\MyAniGPT\\src\\app\\services"
+2025-11-17T22:11:23.638220Z  INFO get_files:scan_sources: tailwindcss_oxide::scanner: exit
+2025-11-17T22:11:23.638606Z  INFO get_files: tailwindcss_oxide::scanner: exit
+2025-11-17T22:11:23.638803Z  INFO get_globs: tailwindcss_oxide::scanner: enter
+2025-11-17T22:11:23.638832Z  INFO get_globs: tailwindcss_oxide::scanner: exit
+2025-11-17T22:13:06.797423Z  INFO scan_sources: tailwindcss_oxide::scanner: enter
+2025-11-17T22:13:06.799697Z  INFO scan_sources: tailwindcss_oxide::scanner: Discovering "C:\\Users\\aakas\\Downloads\\Kiro\\MyAniGPT\\.vscode"
+2025-11-17T22:13:06.800231Z  INFO scan_sources: tailwindcss_oxide::scanner: Discovering "C:\\Users\\aakas\\Downloads\\Kiro\\MyAniGPT\\public"
+2025-11-17T22:13:06.800399Z  INFO scan_sources: tailwindcss_oxide::scanner: Discovering "C:\\Users\\aakas\\Downloads\\Kiro\\MyAniGPT\\scripts"
+2025-11-17T22:13:06.800531Z  INFO scan_sources: tailwindcss_oxide::scanner: Discovering "C:\\Users\\aakas\\Downloads\\Kiro\\MyAniGPT\\src"
+2025-11-17T22:13:06.800646Z  INFO scan_sources: tailwindcss_oxide::scanner: Discovering "C:\\Users\\aakas\\Downloads\\Kiro\\MyAniGPT\\src\\app"
+2025-11-17T22:13:06.801127Z  INFO scan_sources: tailwindcss_oxide::scanner: Discovering "C:\\Users\\aakas\\Downloads\\Kiro\\MyAniGPT\\src\\app\\ai"
+2025-11-17T22:13:06.801676Z  INFO scan_sources: tailwindcss_oxide::scanner: Discovering "C:\\Users\\aakas\\Downloads\\Kiro\\MyAniGPT\\src\\app\\ai\\animeAgentTools.ts"
+2025-11-17T22:13:06.802028Z  INFO scan_sources: tailwindcss_oxide::scanner: Discovering "C:\\Users\\aakas\\Downloads\\Kiro\\MyAniGPT\\src\\app\\api"
+2025-11-17T22:13:06.802209Z  INFO scan_sources: tailwindcss_oxide::scanner: Discovering "C:\\Users\\aakas\\Downloads\\Kiro\\MyAniGPT\\src\\app\\api\\auth"
+2025-11-17T22:13:06.802347Z  INFO scan_sources: tailwindcss_oxide::scanner: Discovering "C:\\Users\\aakas\\Downloads\\Kiro\\MyAniGPT\\src\\app\\api\\auth\\login"
+2025-11-17T22:13:06.802551Z  INFO scan_sources: tailwindcss_oxide::scanner: Discovering "C:\\Users\\aakas\\Downloads\\Kiro\\MyAniGPT\\src\\app\\api\\chat"
+2025-11-17T22:13:06.802710Z  INFO scan_sources: tailwindcss_oxide::scanner: Discovering "C:\\Users\\aakas\\Downloads\\Kiro\\MyAniGPT\\src\\app\\api\\chat\\stream"
+2025-11-17T22:13:06.802890Z  INFO scan_sources: tailwindcss_oxide::scanner: Discovering "C:\\Users\\aakas\\Downloads\\Kiro\\MyAniGPT\\src\\app\\api\\chat\\text-stream"
+2025-11-17T22:13:06.803287Z  INFO scan_sources: tailwindcss_oxide::scanner: Discovering "C:\\Users\\aakas\\Downloads\\Kiro\\MyAniGPT\\src\\app\\api\\mal"
+2025-11-17T22:13:06.803465Z  INFO scan_sources: tailwindcss_oxide::scanner: Discovering "C:\\Users\\aakas\\Downloads\\Kiro\\MyAniGPT\\src\\app\\api\\mal\\callback"
+2025-11-17T22:13:06.803643Z  INFO scan_sources: tailwindcss_oxide::scanner: Discovering "C:\\Users\\aakas\\Downloads\\Kiro\\MyAniGPT\\src\\app\\api\\mal\\login"
+2025-11-17T22:13:06.803867Z  INFO scan_sources: tailwindcss_oxide::scanner: Discovering "C:\\Users\\aakas\\Downloads\\Kiro\\MyAniGPT\\src\\app\\api\\test-mal-update"
+2025-11-17T22:13:06.804196Z  INFO scan_sources: tailwindcss_oxide::scanner: Discovering "C:\\Users\\aakas\\Downloads\\Kiro\\MyAniGPT\\src\\app\\chat"
+2025-11-17T22:13:06.804391Z  INFO scan_sources: tailwindcss_oxide::scanner: Discovering "C:\\Users\\aakas\\Downloads\\Kiro\\MyAniGPT\\src\\app\\chat-simple"
+2025-11-17T22:13:06.804584Z  INFO scan_sources: tailwindcss_oxide::scanner: Discovering "C:\\Users\\aakas\\Downloads\\Kiro\\MyAniGPT\\src\\app\\components"
+2025-11-17T22:13:06.804870Z  INFO scan_sources: tailwindcss_oxide::scanner: Discovering "C:\\Users\\aakas\\Downloads\\Kiro\\MyAniGPT\\src\\app\\services"
+2025-11-17T22:13:06.805205Z  INFO scan_sources: tailwindcss_oxide::scanner: exit
+2025-11-17T22:13:06.805218Z  INFO extract_candidates: tailwindcss_oxide::scanner: enter
+2025-11-17T22:13:06.805223Z  INFO extract_candidates:read_all_files: tailwindcss_oxide::scanner: enter
+2025-11-17T22:13:06.805226Z  INFO extract_candidates:read_all_files: tailwindcss_oxide::scanner: Reading 1 file(s)
+2025-11-17T22:13:06.805309Z  INFO extract_candidates:read_all_files: tailwindcss_oxide::scanner: Reading "C:\\Users\\aakas\\Downloads\\Kiro\\MyAniGPT\\src\\app\\ai\\animeAgentTools.ts"
+2025-11-17T22:13:06.805318Z  INFO extract_candidates:read_all_files: tailwindcss_oxide::scanner: exit
+2025-11-17T22:13:06.805328Z  INFO extract_candidates:parse_all_blobs: tailwindcss_oxide::scanner: enter
+2025-11-17T22:13:06.805335Z  INFO extract_candidates:parse_all_blobs:extract: tailwindcss_oxide::scanner: enter
+2025-11-17T22:13:06.805651Z  INFO extract_candidates:parse_all_blobs:extract: tailwindcss_oxide::scanner: exit
+2025-11-17T22:13:06.805677Z  INFO extract_candidates:parse_all_blobs: tailwindcss_oxide::scanner: exit
+2025-11-17T22:13:06.805760Z  INFO extract_candidates: tailwindcss_oxide::scanner: exit
+2025-11-17T22:13:06.806191Z  INFO get_files: tailwindcss_oxide::scanner: enter
+2025-11-17T22:13:06.806216Z  INFO get_files:scan_sources: tailwindcss_oxide::scanner: enter
+2025-11-17T22:13:06.807651Z  INFO get_files:scan_sources: tailwindcss_oxide::scanner: Discovering "C:\\Users\\aakas\\Downloads\\Kiro\\MyAniGPT\\.vscode"
+2025-11-17T22:13:06.808090Z  INFO get_files:scan_sources: tailwindcss_oxide::scanner: Discovering "C:\\Users\\aakas\\Downloads\\Kiro\\MyAniGPT\\public"
+2025-11-17T22:13:06.808240Z  INFO get_files:scan_sources: tailwindcss_oxide::scanner: Discovering "C:\\Users\\aakas\\Downloads\\Kiro\\MyAniGPT\\scripts"
+2025-11-17T22:13:06.808366Z  INFO get_files:scan_sources: tailwindcss_oxide::scanner: Discovering "C:\\Users\\aakas\\Downloads\\Kiro\\MyAniGPT\\src"
+2025-11-17T22:13:06.808485Z  INFO get_files:scan_sources: tailwindcss_oxide::scanner: Discovering "C:\\Users\\aakas\\Downloads\\Kiro\\MyAniGPT\\src\\app"
+2025-11-17T22:13:06.808602Z  INFO get_files:scan_sources: tailwindcss_oxide::scanner: Discovering "C:\\Users\\aakas\\Downloads\\Kiro\\MyAniGPT\\src\\app\\ai"
+2025-11-17T22:13:06.808822Z  INFO get_files:scan_sources: tailwindcss_oxide::scanner: Discovering "C:\\Users\\aakas\\Downloads\\Kiro\\MyAniGPT\\src\\app\\api"
+2025-11-17T22:13:06.808942Z  INFO get_files:scan_sources: tailwindcss_oxide::scanner: Discovering "C:\\Users\\aakas\\Downloads\\Kiro\\MyAniGPT\\src\\app\\api\\auth"
+2025-11-17T22:13:06.809052Z  INFO get_files:scan_sources: tailwindcss_oxide::scanner: Discovering "C:\\Users\\aakas\\Downloads\\Kiro\\MyAniGPT\\src\\app\\api\\auth\\login"
+2025-11-17T22:13:06.809213Z  INFO get_files:scan_sources: tailwindcss_oxide::scanner: Discovering "C:\\Users\\aakas\\Downloads\\Kiro\\MyAniGPT\\src\\app\\api\\chat"
+2025-11-17T22:13:06.809355Z  INFO get_files:scan_sources: tailwindcss_oxide::scanner: Discovering "C:\\Users\\aakas\\Downloads\\Kiro\\MyAniGPT\\src\\app\\api\\chat\\stream"
+2025-11-17T22:13:06.809522Z  INFO get_files:scan_sources: tailwindcss_oxide::scanner: Discovering "C:\\Users\\aakas\\Downloads\\Kiro\\MyAniGPT\\src\\app\\api\\chat\\text-stream"
+2025-11-17T22:13:06.809684Z  INFO get_files:scan_sources: tailwindcss_oxide::scanner: Discovering "C:\\Users\\aakas\\Downloads\\Kiro\\MyAniGPT\\src\\app\\api\\mal"
+2025-11-17T22:13:06.809812Z  INFO get_files:scan_sources: tailwindcss_oxide::scanner: Discovering "C:\\Users\\aakas\\Downloads\\Kiro\\MyAniGPT\\src\\app\\api\\mal\\callback"
+2025-11-17T22:13:06.809956Z  INFO get_files:scan_sources: tailwindcss_oxide::scanner: Discovering "C:\\Users\\aakas\\Downloads\\Kiro\\MyAniGPT\\src\\app\\api\\mal\\login"
+2025-11-17T22:13:06.810149Z  INFO get_files:scan_sources: tailwindcss_oxide::scanner: Discovering "C:\\Users\\aakas\\Downloads\\Kiro\\MyAniGPT\\src\\app\\api\\test-mal-update"
+2025-11-17T22:13:06.810318Z  INFO get_files:scan_sources: tailwindcss_oxide::scanner: Discovering "C:\\Users\\aakas\\Downloads\\Kiro\\MyAniGPT\\src\\app\\chat"
+2025-11-17T22:13:06.810558Z  INFO get_files:scan_sources: tailwindcss_oxide::scanner: Discovering "C:\\Users\\aakas\\Downloads\\Kiro\\MyAniGPT\\src\\app\\chat-simple"
+2025-11-17T22:13:06.810732Z  INFO get_files:scan_sources: tailwindcss_oxide::scanner: Discovering "C:\\Users\\aakas\\Downloads\\Kiro\\MyAniGPT\\src\\app\\components"
+2025-11-17T22:13:06.810964Z  INFO get_files:scan_sources: tailwindcss_oxide::scanner: Discovering "C:\\Users\\aakas\\Downloads\\Kiro\\MyAniGPT\\src\\app\\services"
+2025-11-17T22:13:06.811218Z  INFO get_files:scan_sources: tailwindcss_oxide::scanner: exit
+2025-11-17T22:13:06.811361Z  INFO get_files: tailwindcss_oxide::scanner: exit
+2025-11-17T22:13:06.811634Z  INFO get_globs: tailwindcss_oxide::scanner: enter
+2025-11-17T22:13:06.811660Z  INFO get_globs: tailwindcss_oxide::scanner: exit

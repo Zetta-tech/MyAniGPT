@@ -15,7 +15,7 @@ export class AnimeAgent {
             name: 'AnimeExpert',
             instructions: ANIME_AGENT_SYSTEM_PROMPT,
             tools: animeAgentTools,
-            model: "gpt-4.1-2025-04-14",
+            model: "gpt-4.1-mini-2025-04-14",
             modelSettings: {
                 toolChoice: 'auto', // Let model decide when to use tools
                 

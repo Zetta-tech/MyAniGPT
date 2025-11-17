@@ -184,8 +184,13 @@ class MALService {
         animeId: number,
         status?: 'watching' | 'completed' | 'on_hold' | 'dropped' | 'plan_to_watch',
         score?: number,
-        numWatchedEpisodes?: number
+        numWatchedEpisodes?: number,
+        comments?: string
     ): Promise<any> {
+        console.log('[updateAnimeListStatus] Called with:', { animeId, status, score, numWatchedEpisodes, comments });
+        console.log('[updateAnimeListStatus] Has access token:', this.hasAccessToken());
+        console.log('[updateAnimeListStatus] Access token (first 20 chars):', this.accessToken?.substring(0, 20));
+        
         if (!this.hasAccessToken()) {
             throw new Error('Access token required for updating anime list');
         }
@@ -194,8 +199,14 @@ class MALService {
         if (status) body.append('status', status);
         if (score !== undefined) body.append('score', score.toString());
         if (numWatchedEpisodes !== undefined) body.append('num_watched_episodes', numWatchedEpisodes.toString());
+        if (comments !== undefined) body.append('comments', comments);
 
-        return this.makeRequest(`/anime/${animeId}/my_list_status`, {}, 'PUT', body);
+        console.log('[updateAnimeListStatus] Request body:', body.toString());
+        console.log('[updateAnimeListStatus] Request URL:', `/anime/${animeId}/my_list_status`);
+
+        const result = await this.makeRequest(`/anime/${animeId}/my_list_status`, {}, 'PUT', body);
+        console.log('[updateAnimeListStatus] Response:', result);
+        return result;
     }
 }
 

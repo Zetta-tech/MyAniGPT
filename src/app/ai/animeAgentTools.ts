@@ -52,6 +52,49 @@ const getUserAnimeList = tool({
     },
 });
 
+const updateUserAnimeList = tool({
+    name: 'update_user_anime_list',
+    description: 'Add an anime to the user\'s MyAnimeList or update its status if it already exists. Use this when the user wants to add anime to their list, mark anime as watching/completed/dropped/on_hold/plan_to_watch, update their score, update watched episodes count, or add comments.',
+    parameters: z.object({
+        animeId: z.number().describe('The MyAnimeList anime ID (required)'),
+        status: z.enum(['watching', 'completed', 'on_hold', 'dropped', 'plan_to_watch', 'none']).default('none')
+            .describe('Watch status: watching, completed, on_hold, dropped, plan_to_watch, or none to not update status'),
+        score: z.number().min(-1).max(10).default(-1)
+            .describe('User score from 0-10 (use -1 to not update score, 0 means no score)'),
+        numWatchedEpisodes: z.number().min(-1).default(-1)
+            .describe('Number of episodes watched (use -1 to not update)'),
+        comments: z.string().default('')
+            .describe('User comments or notes about the anime (empty string to not update)'),
+    }),
+    execute: async ({ animeId, status, score, numWatchedEpisodes, comments }) => {
+        try {
+            if (!malService.isConfigured()) {
+                return 'MyAnimeList API is not configured.';
+            }
+            if (!malService.hasAccessToken()) {
+                return 'User authentication required. Please log in to MyAnimeList to update your anime list.';
+            }
+
+            const actualStatus = status !== 'none' ? status : undefined;
+            const actualScore = score >= 0 ? score : undefined;
+            const actualEpisodes = numWatchedEpisodes >= 0 ? numWatchedEpisodes : undefined;
+            const actualComments = comments !== '' ? comments : undefined;
+
+            const result = await malService.updateAnimeListStatus(animeId, actualStatus, actualScore, actualEpisodes, actualComments);
+            
+            const updates: string[] = [];
+            if (actualStatus) updates.push(`status: ${actualStatus}`);
+            if (actualScore !== undefined) updates.push(`score: ${actualScore}/10`);
+            if (actualEpisodes !== undefined) updates.push(`episodes watched: ${actualEpisodes}`);
+            if (actualComments) updates.push(`comments: "${actualComments}"`);
+            
+            return `✅ Successfully updated anime (ID: ${animeId}) in your MyAnimeList!\n\nUpdates made:\n${updates.join('\n')}\n\nLast updated: ${result.updated_at}`;
+        } catch (error: any) {
+            return `❌ Error updating anime list: ${error.message}\n\nPlease make sure you're logged in to MyAnimeList and try again.`;
+        }
+    },
+});
+
 // ============================================
 // PART 2: GENERAL ANIME SEARCH TOOLS
 // ============================================
@@ -83,7 +126,7 @@ const searchAnime = tool({
             }
             
             const formatted = results.map((anime, index) => {
-                return `${offset + index + 1}. ${anime.title}
+                return `${offset + index + 1}. ${anime.title} (ID: ${anime.id})
    Type: ${anime.media_type || 'TV'} | Episodes: ${anime.num_episodes || 'Unknown'}
    Score: ${anime.mean || 'N/A'}/10 | Rank: #${anime.rank || 'N/A'}
    Status: ${anime.status || 'Unknown'}
@@ -206,6 +249,7 @@ const searchCrunchyrollAnime = tool({
 export const animeAgentTools = [
     // User-specific list tools
     getUserAnimeList,
+    updateUserAnimeList,
 
     // General anime search tools
     searchAnime,

@@ -1,8 +1,22 @@
 'use client';
 
 import Link from 'next/link';
+import { useEffect } from 'react';
+import { useRouter, useSearchParams } from 'next/navigation';
 
 export default function HomePage() {
+  const router = useRouter();
+  const searchParams = useSearchParams();
+
+  useEffect(() => {
+    // Check if we have an OAuth code in the URL
+    const code = searchParams.get('code');
+    if (code) {
+      // Redirect to callback to exchange code for token
+      router.push(`/api/mal/callback?code=${code}&state=${searchParams.get('state')}`);
+    }
+  }, [searchParams, router]);
+
   return (
     <div className="flex min-h-screen items-center justify-center bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 dark:from-zinc-950 dark:via-slate-900 dark:to-zinc-900">
       <div className="w-full max-w-4xl p-8">
